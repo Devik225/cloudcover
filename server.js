@@ -46,7 +46,7 @@ function geocode(city, callback){
             var values = JSON.parse(data);
             city_name = values[0].name;
             country = values[0].country;
-            latitude = values[0].lon;
+            latitude = values[0].lat;
             longitude = values[0].lon;  
             
             callback();
@@ -59,13 +59,13 @@ function geocode(city, callback){
 
 function get_data(){
 
-    url_data = "https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&appid=a75fd0ffb10a00e19a40a008a31f4398&units=metric&exclude=hourly,minutely";
+    url_data = "https://api.openweathermap.org/data/2.5/onecall?lat=" +latitude+ "&lon=" +longitude+ "&appid=a75fd0ffb10a00e19a40a008a31f4398&units=metric&exclude=hourly,minutely";
 
     https.get(url_data, (response)=>{
         
         response.on("data", (data)=>{
             var info = JSON.parse(data);
-            var temperature = info.current.pressure;
+            var temperature = info.current.temp;
 
             console.log(temperature);
 
