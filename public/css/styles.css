@@ -18,6 +18,7 @@ select:focus {
 .wrapper {
   background: linear-gradient(rgba(1, 0, 17, 0.4), rgba(1, 0, 17, 0.4)),
     url("css_img/background/bg_winter.svg");
+  background-size: cover;
   display: flex;
   position: absolute;
   left: 0;
@@ -188,6 +189,9 @@ select:focus {
 }
 
 .wind_map {
+  background-image: url("http://www.nasa.gov/sites/default/files/thumbnails/image/africandustnpp-friday.jpg");
+  background-size: cover;
+  opacity: 0.4;
   width: 10vw;
   height: 6vw;
   background-color: whitesmoke;
@@ -216,4 +220,153 @@ select:focus {
   width: 33%;
   color: #bcbcbc;
   font-family: 1vw;
+}
+
+/* //Responsive */
+
+@media (max-width: 500px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .main {
+    height: 30%;
+    width: 100%;
+  }
+
+  .stats {
+    height: 70%;
+    width: 100%;
+    padding-left: 3vh;
+    padding-right: 3vh;
+  }
+
+  .logo {
+    font-size: 1.5vh;
+    height: fit-content;
+  }
+
+  .temp {
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 6vh;
+  }
+
+  .temp_value {
+    font-size: 8.7vh;
+  }
+
+  .temp_degree {
+    bottom: 2vh;
+    font-size: 6.25vh;
+  }
+
+  .temp_city {
+    margin-top: 1.6vh;
+    margin-left: 1.5vh;
+  }
+
+  .temp_city_name {
+    font-size: 3vh;
+  }
+
+  .temp_city_date {
+    font-size: 1.06vh;
+  }
+
+  .temp_icon {
+    top: 1.7vh;
+    left: 1vh;
+  }
+
+  .cld_icon {
+    width: 3.3vh !important;
+  }
+
+  /* main content end */
+
+  /* ************************************************************************** */
+
+  /* stats content */
+
+  .stats::-webkit-scrollbar {
+    display: none;
+  }
+
+  .input {
+    height: 3vh;
+    padding-left: 1.4vh;
+    border-radius: 25px;
+  }
+
+  .city_search {
+    font-size: 1vh;
+    margin-left: 0.8vh;
+  }
+
+  .search_logo {
+    width: 1.1vh !important;
+  }
+
+  .index {
+    margin-top: 3.1vh;
+    margin-bottom: 2.5vh;
+    font-size: 1.2vh;
+  }
+
+  .index_line {
+    top: 0.9vh;
+  }
+
+  /* Main body */
+
+  .cloudiness {
+    margin-bottom: 0.5vh;
+    font-size: 2vh;
+  }
+
+  .feels_like {
+    margin-bottom: 1.8vh;
+    font-size: 1.4vh;
+  }
+
+  .weather_details_row {
+    font-size: 1.3vh;
+    margin-bottom: 1.5vh;
+  }
+
+  .weather_data_img {
+    width: 2vh;
+  }
+
+  /* wind box */
+
+  .wind {
+    margin-top: 3vh;
+    padding: 0.5vh;
+  }
+
+  .wind_map {
+    width: 12vh;
+    height: 7vh;
+    margin-right: 0.4vh;
+  }
+
+  .wind_text {
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    font-size: 0.9vh;
+  }
+
+  .wind_img {
+    width: 1.6vh;
+  }
+
+  /* forecast */
+
+  .forecast {
+    margin-bottom: 1vh;
+    font-size: 1.3vh;
+  }
 }

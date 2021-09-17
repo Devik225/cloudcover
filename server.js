@@ -21,8 +21,8 @@
 let city_name;
 let country_code;
 let country;
-let latitude;
-let longitude;
+let latitude=1;
+let longitude=1;
 
 //api data
 
@@ -204,3 +204,6 @@ app.listen(3000 || process.env.PORT, ()=>{
 
 // Geo coding
 // https://api.openweathermap.org/geo/1.0/direct?q=London&appid=a75fd0ffb10a00e19a40a008a31f4398&exclude=local_names
+
+//maps
+// https://tile.openweathermap.org/map/wind_new/1/33.44/-94.04.png?appid=a75fd0ffb10a00e19a40a008a31f4398
