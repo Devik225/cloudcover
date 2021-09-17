@@ -40,6 +40,7 @@ let api_wind_speed;
 let api_wind_degree;
 let api_wind_gust;
 
+let app_id = "a75fd0ffb10a00e19a40a008a31f4398";
 
 //server start----------------->
 
@@ -52,6 +53,8 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+
+geocode("kota", get_data);
 
 app.get('/', (req, res)=>{
     
@@ -90,7 +93,6 @@ app.post('/', (req, res)=>{
 
 //Function to geocode
 
-let app_id = "a75fd0ffb10a00e19a40a008a31f4398";
 
 function geocode(city, callback){
 
@@ -100,13 +102,21 @@ function geocode(city, callback){
         
         response.on("data", (data)=>{
             var values = JSON.parse(data);
-            city_name = values[0].name;
-            country_code = values[0].country;
-            country = values[0].country;
-            latitude = values[0].lat;
-            longitude = values[0].lon;  
-            
-                callback();
+
+            if(values.cod){
+                
+                console.log("found error");
+                
+            }
+            else{
+                city_name = values[0].name;
+                country_code = values[0].country;
+                country = values[0].country;
+                latitude = values[0].lat;
+                longitude = values[0].lon;  
+                
+            }           
+            callback();
             
         })
     })

@@ -181,14 +181,14 @@ select:focus {
   margin-top: 1.5vw;
   padding: 0.5vw;
   background-color: #8787972a;
-  width: 90%;
+  width: fit-content;
   display: flex;
   border-radius: 3px;
   align-items: center;
 }
 
 .wind_map {
-  width: 50%;
+  width: 10vw;
   height: 6vw;
   background-color: whitesmoke;
   margin-right: 0.4vw;
