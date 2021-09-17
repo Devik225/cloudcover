@@ -181,7 +181,7 @@ select:focus {
   margin-top: 1.5vw;
   padding: 0.5vw;
   background-color: #8787972a;
-  width: 80%;
+  width: 90%;
   display: flex;
   border-radius: 3px;
   align-items: center;
@@ -191,7 +191,7 @@ select:focus {
   width: 50%;
   height: 6vw;
   background-color: whitesmoke;
-  margin-right: 1vw;
+  margin-right: 0.4vw;
 }
 
 .wind_text {

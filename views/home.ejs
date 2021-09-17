@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- External files -->    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Container -->
+    <div class="wrapper">
+
+        <!-- Left side -->
+        <div class="main">
+
+            <div class="logo">
+                cloudcover.
+            </div>
+
+            <div class="temp">
+                <div class="temp_value">
+                    <%=ejs_temp%><span class="temp_degree">°</span>
+                </div>
+
+                <div class="temp_city">
+                    <div class="temp_city_name">
+                        <%=ejs_city%>
+                    </div>
+                    <div class="temp_city_date">
+                        <%=ejs_time_date%>
+                        
+                    </div>                    
+                </div>
+
+                <div class="temp_icon">
+                    <img src="img/temp_icon.svg" alt="temp_icon" style="width: 3.5vw;">
+                </div>
+            </div>
+        <!-- Left side end-->
+
+        </div>
+
+        <!-- right side -->
+        <div class="stats">
+
+            <form action="/" method="POST" class="input">
+                <!-- <i class="material-icons " id="search_icon"> search </i> -->
+                <img src="img/search.svg" alt="search" style="width: 1.1vw;"> 
+                <input type="text" name="city_search" id="city_search" class="city_search" placeholder="Enter location">
+            </form>
+
+            <div class="index">
+                <div class="index_text">Weather details</div>
+                <div class="index_line"></div>              
+            </div>
+
+            <div class="cloudiness">
+                <%=ejs_cloud_percent%>
+            </div>
+
+            <div class="feels_like">
+                <%=ejs_feels_like%>
+            </div>
+
+            <div class="weather_details_row">
+
+                <div class="weather_data">
+                    <img src="img/pressure.svg" class="weather_data_img">
+                    Pressure - <%=ejs_pressure%> hPa
+                </div>
+
+                <div class="weather_data">
+                    <img src="img/visibility.svg" class="weather_data_img">
+                    Visibility - <%=ejs_visibility%> km
+                </div>
+                
+            </div>
+
+            <div class="weather_details_row">
+
+                <div class="weather_data">
+                    <img src="img/uv.svg" class="weather_data_img">
+                    UV index - <%=ejs_uv%>
+                </div>
+
+                <div class="weather_data">
+                    <img src="img/Humidity.svg" class="weather_data_img">
+                    Humidity - <%=ejs_humidity%> %
+                </div>
+                
+            </div>
+
+            <div class="weather_details_row">
+
+                <div class="weather_data">
+                    <img src="img/dew.svg" class="weather_data_img">
+                    Dew point - <%=ejs_dew%> °C
+                </div>
+                
+            </div>
+
+            <div class="wind">
+                <div class="wind_map">                    
+
+                </div>
+
+                <div class="wind_content">
+                    <div class="wind_text">
+                        <img src="img/w_speed.svg" class="wind_img">
+                        Wind speed - <%=ejs_wind_speed%> m/s
+                    </div>   
+                    <div class="wind_text">
+                        <img src="img/w_degree.svg" class="wind_img">
+                        Wind degree - <%=ejs_wind_degree%> °
+                    </div>
+                    <div class="wind_text">
+                        <img src="img/w_gust.svg" class="wind_img">
+                        Wind gust - <%=ejs_wind_gust%> 
+                    </div>                 
+                </div>
+            </div>
+
+
+
+            <div class="index">
+                <div class="index_text_forecast">Weather forecast</div>
+                <div class="index_line"></div>              
+            </div>
+
+            <div class="forecast" id="day_1">
+                <div class="forecast_txt">
+                    Wed, Sep 15
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    overcast clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_2">
+                <div class="forecast_txt">
+                    Thu, Sep 16
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    scattered clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_3">
+                <div class="forecast_txt">
+                    Fri, Sep 17
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    broken clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_4">
+                <div class="forecast_txt">
+                    Fri, Sep 17
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    broken clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_5">
+                <div class="forecast_txt">
+                    Fri, Sep 17
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    broken clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_6">
+                <div class="forecast_txt">
+                    Fri, Sep 17
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    broken clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_7">
+                <div class="forecast_txt">
+                    Fri, Sep 17
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    broken clouds
+                </div>
+            </div>
+
+            <div class="forecast" id="day_8">
+                <div class="forecast_txt">
+                    Fri, Sep 17
+                </div>
+
+                <div class="forecast_txt">
+                    19 / 15°C
+                </div>
+
+                <div class="forecast_txt">
+                    broken clouds
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
