@@ -39,6 +39,9 @@ let api_dew;
 let api_wind_speed;
 let api_wind_degree;
 let api_wind_gust;
+let forecast_date = [];
+let forecast_temp = [];
+let forecast_status = [];
 
 let app_id = "a75fd0ffb10a00e19a40a008a31f4398";
 
@@ -71,7 +74,10 @@ app.get('/', (req, res)=>{
         ejs_dew: api_dew,
         ejs_wind_speed: api_wind_speed,
         ejs_wind_degree: api_wind_degree,
-        ejs_wind_gust: api_wind_gust   
+        ejs_wind_gust: api_wind_gust,   
+        forecast_time: forecast_date,
+        forecast_values: forecast_temp,
+        forecast_type: forecast_status
     });
 
 })
@@ -134,7 +140,7 @@ function get_data(){
         response.on("data", (data)=>{
             let info = JSON.parse(data);
 
-            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
             const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             const d = new Date();
 
@@ -151,6 +157,34 @@ function get_data(){
             api_wind_speed = info.current.wind_speed;
             api_wind_degree = info.current.wind_deg;
             api_wind_gust = info.current.wind_gust + " m/s";
+
+
+            for(var i=1; i<=8; i++){
+                let week = (d.getDay() + i)%7;
+                let m = d.getMonth()-1;
+                if((d.getDate() + i)%7 < d.getDate()){
+                    m++;
+                }
+                let t = d.getDate();
+                if(m==1){
+                    t = (t+i)%28
+                }
+                else if(m%2 == 0){
+                    t = (t+i)%31;
+                }
+                else{
+                    t = (t+i)%30
+                }
+                let day = days[week] + ", " + month[m] +" "+ t;
+                let temp_day = Math.round(info.daily[i-1].temp.day);
+                let temp_night = Math.round(info.daily[i-1].temp.night);
+                let temp = temp_day + " / " + temp_night+"°C";
+                let stats = info.daily[i-1].weather[0].description;
+
+                forecast_date.push(day);
+                forecast_temp.push(temp);
+                forecast_status.push(stats);
+            }
             
 
         })

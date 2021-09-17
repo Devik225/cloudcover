@@ -144,15 +144,15 @@
             <% for(var i=0; i<8; i++){%>
                 <div class="forecast" id="day_1">
                     <div class="forecast_txt">
-                        Wed, Sep 15
+                        <%= forecast_time[i] %>
                     </div>
     
                     <div class="forecast_txt">
-                        19 / 15°C
+                        <%= forecast_values[i] %>
                     </div>
     
                     <div class="forecast_txt">
-                        overcast clouds
+                        <%= forecast_type[i] %>
                     </div>
                 </div>
                 <%};%>
