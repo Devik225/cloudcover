@@ -1,0 +1,219 @@
+/* universal */
+
+body {
+  background-color: #24242d;
+  color: white;
+  font-family: "Rubik", sans-serif;
+  overflow: hidden;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* container */
+
+.wrapper {
+  background: linear-gradient(rgba(1, 0, 17, 0.4), rgba(1, 0, 17, 0.4)),
+    url("css_img/background/bg_winter.svg");
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* main content */
+
+.main {
+  height: 100%;
+  width: 68%;
+  padding-left: 6.25vw;
+  padding-top: 3.125vw;
+}
+
+.logo {
+  font-size: 1.5vw;
+  font-weight: 200;
+}
+
+/* Left bottom temperature */
+
+.temp {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  bottom: 2vw;
+}
+
+.temp_value {
+  font-size: 8.7vw;
+  font-weight: 400;
+}
+
+.temp_degree {
+  position: relative;
+  bottom: 2vw;
+  font-size: 6.25vw;
+  font-weight: 400;
+}
+
+.temp_city {
+  margin-top: 1.6vw;
+  margin-left: 1.5vw;
+}
+
+.temp_city_name {
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.temp_city_date {
+  font-size: 1.06vw;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.temp_icon {
+  position: relative;
+  top: 1.7vw;
+  left: 1vw;
+}
+
+/* main content end */
+
+/* ************************************************************************** */
+
+/* stats content */
+
+.stats {
+  background-color: rgba(51, 51, 51, 0.3);
+  height: 100%;
+  width: 32%;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  padding-top: 3.1vw;
+  overflow-y: scroll;
+  backdrop-filter: blur(5px);
+}
+
+.stats::-webkit-scrollbar {
+  display: none;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(48, 54, 59, 0.5);
+  height: 3vw;
+  padding-left: 1.4vw;
+  border-radius: 25px;
+}
+
+.city_search {
+  font-size: 1vw;
+  margin-left: 0.8vw;
+  background: none;
+  border: none;
+  color: #d3d2d2;
+}
+
+.index {
+  margin-top: 3.1vw;
+  margin-bottom: 2.5vw;
+  font-size: 1vw;
+  font-weight: 300;
+  display: flex;
+}
+
+.index_text {
+  width: 40%;
+}
+
+.index_text_forecast {
+  width: 45%;
+}
+
+.index_line {
+  position: relative;
+  top: 0.7vw;
+  width: 100%;
+  border-top: 1px solid #a3a3a3;
+}
+
+/* Main body */
+
+.cloudiness {
+  margin-bottom: 0.5vw;
+  color: white;
+  font-size: 1.625vw;
+}
+
+.feels_like {
+  margin-bottom: 1.8vw;
+  color: #bcbcbc;
+  font-size: 1.125vw;
+}
+
+.weather_details_row {
+  font-size: 1vw;
+  display: flex;
+  margin-bottom: 1vw;
+}
+
+.weather_data {
+  width: 50%;
+}
+
+.weather_data_img {
+  width: 1.5vw;
+  margin-right: 5px;
+}
+
+/* wind box */
+
+.wind {
+  margin-top: 1.5vw;
+  padding: 0.5vw;
+  background-color: #8787972a;
+  width: 80%;
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+}
+
+.wind_map {
+  width: 50%;
+  height: 6vw;
+  background-color: whitesmoke;
+  margin-right: 1vw;
+}
+
+.wind_text {
+  margin-top: 0.2vw;
+  margin-bottom: 0.2vw;
+  font-size: 0.9vw;
+}
+
+.wind_img {
+  width: 1.6vw;
+}
+
+/* forecast */
+
+.forecast {
+  display: flex;
+  margin-bottom: 1vw;
+  font-size: 1vw;
+}
+
+.forecast_txt {
+  width: 33%;
+  color: #bcbcbc;
+  font-family: 1vw;
+}
