@@ -193,7 +193,7 @@ function get_data(){
 }
 
 
-app.listen(process.env.PORT, ()=>{
+app.listen(3000 || process.env.PORT, ()=>{
     console.log("listening to port 3000");
 })
 
