@@ -295,24 +295,27 @@ select:focus {
   }
 
   .input {
-    height: 3vh;
+    background-color: rgba(250, 250, 250, 0.767);
+    height: 4.5vh;
     padding-left: 1.4vh;
     border-radius: 25px;
   }
 
   .city_search {
-    font-size: 1vh;
+    width: 100%;
+    font-size: 1.2vh;
     margin-left: 0.8vh;
   }
 
   .search_logo {
-    width: 1.1vh !important;
+    filter: saturate(5476%) hue-rotate(50deg) brightness(70%) contrast(119%);
+    width: 1.3vh !important;
   }
 
   .index {
     margin-top: 3.1vh;
     margin-bottom: 2.5vh;
-    font-size: 1.2vh;
+    font-size: 1.5vh;
   }
 
   .index_line {
@@ -322,41 +325,43 @@ select:focus {
   /* Main body */
 
   .cloudiness {
-    margin-bottom: 0.5vh;
-    font-size: 2vh;
+    margin-bottom: 0.7vh;
+    font-size: 2.2vh;
   }
 
   .feels_like {
-    margin-bottom: 1.8vh;
-    font-size: 1.4vh;
+    margin-bottom: 1.9vh;
+    font-size: 1.6vh;
   }
 
   .weather_details_row {
-    font-size: 1.3vh;
-    margin-bottom: 1.5vh;
+    font-size: 1.6vh;
+    margin-bottom: 1.7vh;
   }
 
   .weather_data_img {
-    width: 2vh;
+    width: 2.5vh;
   }
 
   /* wind box */
 
   .wind {
     margin-top: 3vh;
+    margin-bottom: 2vh;
     padding: 0.5vh;
+    padding-right: 1vh;
   }
 
   .wind_map {
-    width: 12vh;
-    height: 7vh;
+    width: 15vh;
+    height: 9vh;
     margin-right: 0.4vh;
   }
 
   .wind_text {
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
-    font-size: 0.9vh;
+    font-size: 1.2vh;
   }
 
   .wind_img {
@@ -367,6 +372,6 @@ select:focus {
 
   .forecast {
     margin-bottom: 1vh;
-    font-size: 1.3vh;
+    font-size: 1.5vh;
   }
 }

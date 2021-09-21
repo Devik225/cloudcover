@@ -144,9 +144,16 @@ function get_data(){
             const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             const d = new Date();
 
+            const nDate = new Date().toLocaleTimeString('en-US', {
+                timeZone: 'Asia/Calcutta', hours:'long'
+              });
+
             api_temp = Math.round(info.current.temp);
             api_city = city_name + "," +country_code;
-            api_time_date = d.getHours() + ":" + d.getMinutes() + " - "+ d.getDate()+ "th" + " " + month[d.getMonth()] + " " + d.getFullYear();
+
+           
+
+            api_time_date = nDate.slice(0, -6) +" " + nDate.slice(-2) + " - "+ d.getDate()+ "th" + " " + month[d.getMonth()] + " " + d.getFullYear();
             api_cloud_percent = info.current.clouds + "% cloudiness";
             api_feels_like = "Feels like " + info.current.feels_like + "°C. " + info.current.weather[0].description +".";
             api_pressure = info.current.pressure;
@@ -193,7 +200,7 @@ function get_data(){
 }
 
 
-app.listen(process.env.PORT, ()=>{
+app.listen(3000 || process.env.PORT, ()=>{
     console.log("listening to port 3000");
 })
 
