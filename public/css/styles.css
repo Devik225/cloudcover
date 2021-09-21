@@ -302,6 +302,7 @@ select:focus {
   }
 
   .city_search {
+    color: #24242d;
     width: 100%;
     font-size: 1.2vh;
     margin-left: 0.8vh;
