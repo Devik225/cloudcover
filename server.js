@@ -173,14 +173,27 @@ function get_data(){
                     m++;
                 }
                 let t = d.getDate();
-                if(m==1){
+
+                if(m === 0){
+                    t = (t+i)%31;
+                    if(t === 0){
+                        t=31;
+                    }
+                }
+                else if(m===1){
                     t = (t+i)%28
                 }
-                else if(m%2 == 0){
-                    t = (t+i)%31;
+                else if(m%2 === 0){
+                    t = (t+i)%30;
+                    if(t === 0){
+                        t=30;
+                    }
                 }
                 else{
-                    t = (t+i)%30
+                    t = (t+i)%31;
+                    if(t === 0){
+                        t=31;
+                    }
                 }
                 let day = days[week] + ", " + month[m] +" "+ t;
                 let temp_day = Math.round(info.daily[i-1].temp.day);
@@ -199,8 +212,12 @@ function get_data(){
 
 }
 
+// switch for remote----
+// process.env.PORT
+// 3000
 
-app.listen(process.env.PORT, ()=>{
+
+app.listen(3000, ()=>{
     console.log("listening to port 3000");
 })
 
