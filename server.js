@@ -168,10 +168,8 @@ function get_data(){
 
             for(var i=1; i<=8; i++){
                 let week = (d.getDay() + i)%7;
-                let m = d.getMonth()-1;
-                if((d.getDate() + i)%7 < d.getDate()){
-                    m++;
-                }
+                let m = d.getMonth();
+                
                 let t = d.getDate();
 
                 if(m === 0){
@@ -195,6 +193,11 @@ function get_data(){
                         t=31;
                     }
                 }
+
+                if(t < d.getDate()){
+                    m++;
+                }
+
                 let day = days[week] + ", " + month[m] +" "+ t;
                 let temp_day = Math.round(info.daily[i-1].temp.day);
                 let temp_night = Math.round(info.daily[i-1].temp.night);
